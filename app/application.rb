@@ -14,7 +14,7 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/cart/)
-    binding.pry
+    
       if @@cart.empty?
         puts 'Your cart is empty'
       else
