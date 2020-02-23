@@ -24,8 +24,10 @@ class Application
     elsif req.path.match(/add/)
       item = req.params["q"]
       if @@items.include? item
-        @@cart<<item
-      
+        @@cart << item
+      else
+        resp.write "Item is not available"
+      end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
