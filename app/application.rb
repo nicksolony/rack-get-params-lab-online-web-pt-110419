@@ -23,7 +23,7 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params["q"]
-      if item
+      if @@items.include?
       
     elsif req.path.match(/search/)
       search_term = req.params["q"]
